@@ -75,7 +75,7 @@ var bounce = function(e){
 }
 
 var stopit = function(){
-  svg.clearInterval(timerID);
+  clearInterval(timerID);
 }
 
 clear_button.addEventListener('click', clear);
