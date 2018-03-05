@@ -1,8 +1,8 @@
 var svg = document.getElementById("svg");
-var clear_button =  document.getElementById("clear");
 var stop_button = document.getElementById("stop");
 var grow_button = document.getElementById("grow");
 var bounce_button = document.getElementById("bounce");
+var clear_button = document.getElementById("clear");
 
 var growing;
 var timerID = 0;
@@ -11,6 +11,10 @@ var clear = function() {
   svg.innerHTML = "";
 }
 
+var clear_btn = function() {
+  svg.innerHTML = "";
+  stopit();
+}
 var is_growing = function(rad){
   if (rad >= 250){
     growing = false;
@@ -78,7 +82,7 @@ var stopit = function(){
   clearInterval(timerID);
 }
 
-clear_button.addEventListener('click', clear);
 stop_button.addEventListener('click', stopit);
 grow_button.addEventListener('click', grow);
 bounce_button.addEventListener('click', bounce);
+clear_button.addEventListener('click', clear_btn);
